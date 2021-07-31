@@ -11,3 +11,11 @@ celery -A worker worker --loglevel=info
 ```
 
 
+## Logic
+
+```
+coin.py <-- Producer of coings, queries API and pushes each cryptocoin to a task queue
+
+worker.py <--- Pops each cryptocoing off of the task queue and saves details in a mongodb
+```
+
